@@ -46,6 +46,21 @@ namespace EngineersDeskAPI.Controllers
             }
         }
 
+        [HttpGet]
+        public ActionResult GetEmployeeById_AdoNet(int id)
+        {
+            try
+            {
+                var employee = _EmployeeRepository.GetEmployeeById_AdoNet(id);
+                return Ok(employee);
+            }
+            catch (Exception e)
+            {
+                return Content(e.Message, "text/plain");
+                //return StatusCode(StatusCodes.Status417ExpectationFailed, e.Message);
+            }
+        }
+
 
         [HttpPost]
         public ActionResult AddEmployee(Employee employee)

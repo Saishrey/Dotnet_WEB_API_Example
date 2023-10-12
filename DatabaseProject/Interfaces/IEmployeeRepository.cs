@@ -10,5 +10,7 @@ namespace DatabaseProject.Interfaces
 
         Employee AddEmployee(Employee employee);
 
+        Employee GetEmployeeById_AdoNet(int id);
+
     }
 }
